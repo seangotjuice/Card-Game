@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 容器 */
+#cards {
+  display: flex;
+  flex-wrap: wrap;
+  /* 寬度和標頭一致 */
+  width: 85%;
+  margin: 0px auto;
+}
+
+/* 每張卡片 */
+.card {
+  /* flex-basis, flex-growth, flex-shrink */
+  /* 100 / 13 = 7.... */
+  flex: 7% 1 1;
+  /* 隨著視窗大小變動，讓她都會佔 8% 視窗大小 */
+  height: 8vw;
+  border: 2px solid #e0e0e0;
+  /* 卡片內部的數字花色 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 2px;
+}
+
+/* 花色 */
+.card img {
+  max-width: 30%;
+  /* 排交叉軸用align-self 這裡column的交叉軸是row所以水平置中 */
+  align-self: center;
+}
+
+/* 數字 */
+.card p {
+  margin: 3px;
+  font-style: 10px;
+}
+
+/* CSS pseudo-class: 同階層中最後一項元素 */
+.card p:last-child {
+  transform: rotate(180deg);
+}
+
+/* 翻背面 */
+.back {
+  background: url("https://assets-lighthouse.alphacamp.co/uploads/image/file/9222/ExportedContentImage_00.png");
+  /* 照片填滿 */
+  background-size: cover;
+}
+
+.paired {
+  background-color: #dae0e3;
+}
+
+#header {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 85%;
+}
+#header .title {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+#header .title img {
+  max-width: 3em;
+}
+#header .title h2 {
+  padding-left: 0.5em;
+}
+#header .score {
+  margin: 0;
+  color: #6c90ac;
+}
+#header .tried {
+  margin-top: 0;
+}
+
+/* 配對錯誤 */
+.wrong {
+  animation-name: wrongAnimation;
+  animation-duration: 0.2s;
+  animation-iteration-count: 5;
+}
+
+@keyframes wrongAnimation {
+  to {
+    border: 2px solid #ffd54f;
+  }
+}
+
+/* 結束遊戲（輸） */
+.loose-game {
+  position: fixed;
+  width: 100%;
+  height: 200px;
+  background: #f00;
+  animation-name: alarm;
+  animation-duration: 2s;
+  opacity: 50%;
+  /* 停在動畫結束時 */
+  animation-fill-mode: forwards;
+  line-height: 200px;
+}
+/* 結束遊戲(贏) */
+.win-game {
+  position: fixed;
+  width: 100%;
+  height: 200px;
+  background: rgb(216, 246, 126);
+  animation-name: alarm;
+  animation-duration: 2s;
+  opacity: 50%;
+  /* 停在動畫結束時 */
+  animation-fill-mode: forwards;
+  line-height: 200px;
+}
+#message {
+  display: flex;
+  justify-content: center;
+  font-size: xx-large;
+}
+@keyframes alarm {
+  from {
+    top: 0%;
+  }
+  to {
+    top: 30%;
+  }
+}
+.shaking {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(0eg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
