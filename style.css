@@ -48,9 +48,9 @@
 
 /* 翻背面 */
 .back {
-  background: url("https://assets-lighthouse.alphacamp.co/uploads/image/file/9222/ExportedContentImage_00.png");
+  background: url("https://images.unsplash.com/photo-1586788224331-947f68671cf1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80");
   /* 照片填滿 */
-  background-size: cover;
+  background-size: 100%;
 }
 
 .paired {
