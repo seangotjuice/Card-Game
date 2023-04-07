@@ -257,3 +257,8 @@ document.querySelectorAll(".card").forEach((card) => {
     controller.dispatchCardAction(card);
   });
 });
+
+// 重新開始遊戲
+document.querySelector(".refresh-btn").addEventListener("click", (e) => {
+  location.reload();
+});
